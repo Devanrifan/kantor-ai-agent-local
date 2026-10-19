@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#dfe7f1" />
+  <title>Kantor AI · Your Office Name</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f7cff'/%3E%3Crect x='7' y='9' width='18' height='12' rx='2' fill='white'/%3E%3Crect x='11' y='23' width='10' height='3' rx='1' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="stage"><canvas id="scene" aria-label="Kantor AI 3D"></canvas></div>
+  <div id="tags" aria-hidden="true"></div>
+
+  <header id="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <div><strong>Kantor AI</strong><small>Your Office Name</small></div>
+    </div>
+    <nav id="chips" aria-label="Divisi"></nav>
+  </header>
+
+  <div id="banner" hidden></div>
+  <div id="hint">Klik karakter untuk ngobrol &nbsp;·&nbsp; geser untuk pindah &nbsp;·&nbsp; scroll untuk zoom</div>
+
+  <aside id="panel" aria-label="Chat" aria-hidden="true">
+    <div class="panel-head">
+      <div id="avatar" class="avatar"></div>
+      <div class="who">
+        <strong id="who-name"></strong>
+        <span id="who-role"></span>
+      </div>
+      <button id="btn-reset" class="icon-btn" title="Mulai chat baru" aria-label="Mulai chat baru">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+      </button>
+      <button id="btn-close" class="icon-btn" title="Tutup" aria-label="Tutup chat">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="mates" class="mates"></div>
+    <div id="messages" class="messages" role="log" aria-live="polite"></div>
+    <div id="quick" class="quick"></div>
+    <form id="composer" class="composer" autocomplete="off">
+      <textarea id="input" rows="1" placeholder="Tulis pesan…" maxlength="4000" enterkeyhint="send"></textarea>
+      <button id="btn-send" type="submit" aria-label="Kirim">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+    <div class="panel-foot">AI bisa keliru. Semua jawaban berupa draft, cek dulu sebelum dikirim ke klien.</div>
+  </aside>
+
+  <div id="gate" class="gate" hidden>
+    <form id="gate-form" class="gate-card">
+      <h2>Masukkan kode akses</h2>
+      <p>Kantor ini dibatasi supaya biaya API tetap terkontrol.</p>
+      <input id="gate-input" type="password" placeholder="Kode akses" autocomplete="current-password" />
+      <p id="gate-error" class="gate-error" hidden></p>
+      <button type="submit">Masuk</button>
+    </form>
+  </div>
+
+  <div id="loading" class="loading"><div class="spinner"></div><span>Menyiapkan kantor…</span></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

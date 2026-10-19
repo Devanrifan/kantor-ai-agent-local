@@ -1,0 +1,27 @@
+{
+  "name": "kantor-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Kantor AI - kantor isometrik 3D berisi tim AI untuk digital agency",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c yellow,cyan \"node --watch server/index.js\" \"vite\"",
+    "dev:web": "vite",
+    "dev:api": "node --watch server/index.js",
+    "build": "vite build",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "three": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "latest",
+    "vite": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
